@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Payment Failed</title>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+ <style>
+  body {
+   background-color: #e6f2ff;
+  }
+  .payment-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+  }
+  .payment-failed {
+   text-align: center;
+   padding: 20px;
+   background-color: #fff;
+   border-radius: 5px;
+   box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+   max-width: 600px;
+   margin: 0 auto;
+   margin-top: -100px;
+   padding-top: 100px;
+   box-sizing: border-box;
+  }
+  .payment-failed h1 {
+   font-size: 2rem;
+   margin-bottom: 0.5rem;
+   color: #dc3545;
+  }
+  .payment-failed p {
+   font-size: 1.1rem;
+   margin-bottom: 1rem;
+   color: #6c757d;
+  }
+  .countdown-container {
+   font-size: 2rem;
+   font-weight: bold;
+   color: #dc3545;
+   margin-top: 2rem;
+   text-align: center;
+   animation: fadeIn 2s;
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+ </style>
+</head>
+<body>
+ <div class="payment-container">
+  <div class="payment-failed">
+   <h1>Payment Failed</h1>
+   <p>Your payment has failed. Please try again or contact support for assistance.</p>
+   <div class="countdown-container">
+     You will be redirected to the homepage in <span id="countdown">5</span> seconds.
+   </div>
+  </div>
+ </div>
+
+ <script>
+  var countdown = 5;
+  var countdownInterval = setInterval(function() {
+    countdown--;
+    if (countdown <= 0) {
+      clearInterval(countdownInterval);
+      window.location.href = "../index.php";
+    }
+    document.querySelector("#countdown").innerHTML = countdown;
+  }, 1000);
+ </script>
+</body>
+</html>

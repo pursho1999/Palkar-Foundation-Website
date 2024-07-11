@@ -1,0 +1,72 @@
+:root{
+    --teal: #2eccac;
+    --teal_hover: #279e8c;
+
+    --clr:#FF5F1F;
+    --clr_h:#bb4a1d;
+}
+
+
+* {
+    /* BY Default Sabke liye yeh font*/
+    font-family: 'Poppins', sans-serif;
+}
+
+.h-font /* Jis ko yeh class dega usko yeh font*/
+{
+    font-family: 'Archivo';
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    appearance: textfield;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+
+.custom-bg {
+    background-color:var(--clr);
+}
+
+.custom-bg:hover {
+    background-color:var(--clr_h);
+}
+
+.h-line{
+    width: 150px;
+    margin:0 auto;
+    height: 1.7px;
+}
+.custom-alert
+{
+    position: fixed;
+    top: 80px;
+    right: 25px;
+   z-index: 11;
+}
+
+#dashboard-menu
+{
+    position: fixed;
+    height: 100%;
+    z-index: 11;
+}
+
+@media screen and (max-width: 991px) 
+{
+    #dashboard-menu
+    {
+        position: fixed;
+        height: auto;
+        width: 100%;
+        
+    }   
+}
+
